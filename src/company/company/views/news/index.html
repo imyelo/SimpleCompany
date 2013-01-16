@@ -1,0 +1,21 @@
+<legend>新闻</legend>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>发布时间</th>
+      <th>标题</th>
+    </tr>
+  </thead>
+  <tbody>
+<% for (var i = 0; i < list_news.length; i++) { %>
+    <tr>
+      <td class="span3"><a href="/news/<%= list_news[i]._id %>">
+        <%= list_news[i].friendly_create_at %>
+      </a></td>
+      <td><a href="/news/<%= list_news[i]._id %>">
+        <%= list_news[i].title %>
+      </a></td>
+    </tr>
+<% } %>
+  </tbody>
+</table>

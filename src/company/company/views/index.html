@@ -1,0 +1,40 @@
+<div class="hero-unit">
+  <h2><%= site.company_name %></h2>
+  <p><%- site.company_description %></p>
+  <p>
+    <a class="btn btn-primary btn-large" href="/carrer">
+      加入我们
+    </a>
+    <a class="btn btn-large" href="/message">
+      留言
+    </a>
+  </p>
+</div>
+<div class="row">
+  <div class="span4">
+    <table class="table table-hover">
+      <legend>新闻</legend>
+      <tbody>
+      <% for (var i = 0; i < list_news.length; i++) { %>
+        <tr><td><a href="/news/<%= list_news[i]._id %>">
+          <i class="icon-star"></i> <%= list_news[i].title %>
+        </a></td><tr>
+      <% } %>
+      </tbody>
+    </table>
+  </div>
+  <div class="span4">
+    <table class="table table-hover">
+      <legend>招聘</legend>
+      <% for (var i = 0; i < list_carrer.length; i++) { %>
+        <tr><td><a href="/carrer/<%= list_carrer[i]._id %>">
+          <i class="icon-heart"></i> <%= list_carrer[i].department %> - <%= list_carrer[i].job %>
+        </a></td><tr>
+      <% } %>
+    </table>
+  </div>
+  <div class="span4">
+    <legend><%= site.company_name %></legend>
+    <article><%- site.company_description %></article>
+  </div>
+</div>

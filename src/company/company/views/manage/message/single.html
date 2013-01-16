@@ -1,0 +1,10 @@
+<div class="page-header">
+  <h3>
+    <%= single_message.title %>
+    <small><a href="mailto:<%= single_message.email %>">@<%= single_message.name %></a></small>
+  </h3>
+  <span class="pull-right badge badge-info"><%= single_message.friendly_create_at %></span>
+</div>
+<article>
+<%- single_message.content %>
+</article>

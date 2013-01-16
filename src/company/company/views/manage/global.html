@@ -1,0 +1,33 @@
+<form class="form-horizontal" action="/manage/global" method="post">
+  <fieldset>
+    <legend>网站设置</legend>
+    <div class="control-group">
+      <label class="control-label" for="company_name">公司名称</label>
+      <div class="controls">
+        <input id="company_name" name="company_name" type="text" class="input-xlarge" value="<%= site.company_name %>" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="company_description">公司简介</label>
+      <div class="controls">
+        <textarea id="company_description" name="company_description" style="width: 90%; height: 200px;"><%= site.company_description %></textarea>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">保存修改</button>
+    </div>
+  </fieldset>
+</form>
+
+<script charset="utf-8" src="/libs/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="/libs/kindeditor/lang/zh_CN.js"></script>
+<script>
+  var editor;
+  KindEditor.ready(function(K) {
+    editor = K.create('#company_description', {resizeType : 1,
+      allowPreviewEmoticons : false,
+      allowImageUpload : false,
+      items : ['fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+    });
+  });
+</script>

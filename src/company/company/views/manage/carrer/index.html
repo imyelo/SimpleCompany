@@ -1,0 +1,33 @@
+<legend>修改招聘信息</legend>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>发布时间</th>
+      <th>部门</th>
+      <th>职位</th>
+      <th>所在地</th>
+      <th>-</th>
+    </tr>
+  </thead>
+  <tbody>
+<% for (var i = 0; i < list_carrer.length; i++) { %>
+    <tr>
+      <td><a href="/manage/carrer/edit/<%= list_carrer[i]._id %>">
+        <%= list_carrer[i].friendly_create_at %>
+      </a></td>
+      <td><a href="/manage/carrer/edit/<%= list_carrer[i]._id %>">
+        <%= list_carrer[i].department %>
+      </a></td>
+      <td><a href="/manage/carrer/edit/<%= list_carrer[i]._id %>">
+        <%= list_carrer[i].job %>
+      </a></td>
+      <td><a href="/manage/carrer/edit/<%= list_carrer[i]._id %>">
+        <%= list_carrer[i].place %>
+      </a></td>
+      <td class="span1"><a class="btn btn-danger btn-mini" href="/manage/carrer/del/<%= list_carrer[i]._id %>">
+        删除
+      </a></td>
+    </tr>
+<% } %>
+  </tbody>
+</table>

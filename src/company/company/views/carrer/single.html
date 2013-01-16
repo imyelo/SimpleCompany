@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h1 style="text-align: center;">
+    <%= single_carrer.department %> - <%= single_carrer.job %>
+    <small>@<%= single_carrer.place %></small>
+  </h1>
+  <span class="pull-right badge badge-info"><%= single_carrer.friendly_create_at %></span>
+</div>
+<dl class="well">
+  <dt>招聘人数</dt>
+  <dd><%= single_carrer.amount %></dd>
+</dl>
+<article>
+<%- single_carrer.description %>
+</article>

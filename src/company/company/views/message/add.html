@@ -1,0 +1,46 @@
+<form class="form-horizontal" action="/message/add" method="post">
+  <fieldset>
+    <legend>留言</legend>
+    <div class="control-group">
+      <label class="control-label" for="title">标题</label>
+      <div class="controls">
+        <input id="title" name="title" type="text" class="input-xlarge" value="" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="name">署名</label>
+      <div class="controls">
+        <input id="name" name="name" type="text" class="input-xlarge" value="" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="email">邮箱地址</label>
+      <div class="controls">
+        <input id="email" name="email" type="text" class="input-xlarge" value="" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="content">内容</label>
+      <div class="controls">
+        <textarea id="content" name="content" style="width: 90%; height: 200px;">
+        </textarea>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">发送</button>
+    </div>
+  </fieldset>
+</form>
+
+<script charset="utf-8" src="/libs/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="/libs/kindeditor/lang/zh_CN.js"></script>
+<script>
+  var editor;
+  KindEditor.ready(function(K) {
+    editor = K.create('#content', {resizeType : 1,
+      allowPreviewEmoticons : false,
+      allowImageUpload : false,
+      items : ['fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+    });
+  });
+</script>

@@ -1,0 +1,26 @@
+<form class="form-horizontal" action="/manage/news/add" method="post">
+  <fieldset>
+    <legend>添加新闻</legend>
+    <input id="title" name="title" type="text" class="input-xxlarge" placeholder="标题" />
+    <hr />
+    <textarea id="editor" name="content" style="width: 100%; height: 200px;">
+    </textarea>
+    <hr />
+    <button type="submit" class="btn btn-primary btn-large pull-right">发布</button>
+  </fieldset>
+</form>
+
+
+
+<script charset="utf-8" src="/libs/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="/libs/kindeditor/lang/zh_CN.js"></script>
+<script>
+  var editor;
+  KindEditor.ready(function(K) {
+    editor = K.create('#editor', {resizeType : 1,
+      allowPreviewEmoticons : false,
+      allowImageUpload : false,
+      items : ['fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+    });
+  });
+</script>

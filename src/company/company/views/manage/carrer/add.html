@@ -1,0 +1,52 @@
+<form class="form-horizontal" action="/manage/carrer/add" method="post">
+  <fieldset>
+    <legend>添加招聘信息</legend>
+    <div class="control-group">
+      <label class="control-label" for="department">部门</label>
+      <div class="controls">
+        <input id="department" name="department" type="text" class="input-xlarge" value="" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="job">职位</label>
+      <div class="controls">
+        <input id="job" name="job" type="text" class="input-xlarge" value="" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="place">所在地</label>
+      <div class="controls">
+        <input id="place" name="place" type="text" class="input-xlarge" value="" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="amount">招聘人数</label>
+      <div class="controls">
+        <input id="amount" name="amount" type="text" class="input-xlarge" value="" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="description">描述</label>
+      <div class="controls">
+        <textarea id="description" name="description" style="width: 90%; height: 200px;">
+        </textarea>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">发布</button>
+    </div>
+  </fieldset>
+</form>
+
+<script charset="utf-8" src="/libs/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="/libs/kindeditor/lang/zh_CN.js"></script>
+<script>
+  var editor;
+  KindEditor.ready(function(K) {
+    editor = K.create('#description', {resizeType : 1,
+      allowPreviewEmoticons : false,
+      allowImageUpload : false,
+      items : ['fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+    });
+  });
+</script>

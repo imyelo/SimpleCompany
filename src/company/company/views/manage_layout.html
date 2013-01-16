@@ -1,0 +1,90 @@
+<% include public/head.html %>
+  <body>
+    <div class="container">
+      <header>
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/"><i class="icon-home"></i> 首页</a></li>
+          <li class="active"><a href="/manage"><i class="icon-wrench icon-white"></i> 管理面板</a></li>
+        </ul>
+        <h3 class="muted"><%= locals.company_name %></h3>
+        <hr />
+      </header>
+      <div class="row">
+        <div class="span3">
+          <ul class="nav nav-list well">
+            <li class="nav-header">
+              全局
+            </li>
+            <li id="nav-0-0">
+              <a href="/"><i class="icon-home"></i> 回到首页</a>
+            </li>
+            <li  id="nav-0-1">
+              <a href="/manage/global"><i class="icon-wrench"></i> 网站设置</a>
+            </li>
+            <li class="divider"></li>
+            <li class="nav-header">
+              新闻
+            </li>
+            <li id="nav-1-0">
+              <a href="/manage/news/add"><i class="icon-plus"></i> 添加新闻</a>
+            </li>
+            <li id="nav-1-1">
+              <a href="/manage/news"><i class="icon-list"></i> 修改/删除新闻</a>
+            </li>
+            <li class="nav-header">
+              招聘
+            </li>
+            <li id="nav-2-0">
+              <a href="/manage/carrer/add"><i class="icon-plus"></i> 添加招聘信息</a>
+            </li>
+            <li id="nav-2-1">
+              <a href="/manage/carrer"><i class="icon-list"></i> 修改/删除招聘信息</a>
+            </li>
+            <li class="nav-header">
+              留言
+            </li>
+            <li id="nav-3-0">
+              <a href="/manage/message"><i class="icon-list"></i> 查看留言</a>
+            </li>
+            <li class="divider"></li>
+            <li id="nav-4-0">
+              <a href="/manage/chgpsw"><i class="icon-lock"></i> 修改密码</a>
+            </li>
+            <li id="nav-4-1">
+              <a href="/manage/logout"><i class="icon-off"></i> 安全退出</a>
+            </li>
+          </ul>
+        </div>
+        <div class="span9">
+          <%- body %>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p><span class="pull-right">&copy; Company 2013</span></p>
+      </footer> 
+    </div>
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var activeNav = function (current) {
+          var kv = {
+            'home': '#nav-0-0',
+            'global': '#nav-0-1',
+            'news/add': '#nav-1-0',
+            'news': '#nav-1-1',
+            'carrer/add': '#nav-2-0',
+            'carrer': '#nav-2-1',
+            'message': '#nav-3-0',
+            'chgpsw': '#nav-4-0',
+            'logout': '#nav-4-1'
+          }
+          var slt = kv[current];
+          return $(slt).addClass('active');
+        };
+        activeNav('<%= pageName %>');
+      });
+    </script>
+  </body>
+</html>
